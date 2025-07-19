@@ -24,7 +24,12 @@ const HomePage = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("https://reqres.in/api/users/2");
+      const res = await axios.get("https://reqres.in/api/users/2",{
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key" : "reqres-free-v1"
+        }
+      });
       console.log(res);
       setUsers(res.data.data)
     } catch (error) {
