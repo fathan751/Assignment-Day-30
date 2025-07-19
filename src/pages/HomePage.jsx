@@ -60,7 +60,7 @@ const HomePage = () => {
           <div className=" mt-10">
             <h2 className="font-bold text-3xl mb-8">All User</h2>
             {listUsers.map((user,key) => (
-            <div className=" flex border-t-1 py-[10px] justify-between px-10">
+            <div key={key} className=" flex border-t-1 py-[10px] justify-between px-10">
               <p className="items-center flex font-semibold">{key+1}. Name: {user.first_name} </p>
               <Link to={`/user-detail/${user?.id}`}>
               <button className="btn btn-primary ml-[50px]">Detail</button>
